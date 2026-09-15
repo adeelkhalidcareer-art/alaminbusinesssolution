@@ -264,14 +264,18 @@
             </ul>
           </div>
 
-          <form class="contact-form">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+          >
             <label>
               Full name
-              <input type="text" name="name" placeholder="Your name" />
+              <input type="text" name="name" placeholder="Your name" required />
             </label>
             <label>
               Email address
-              <input type="email" name="email" placeholder="you@example.com" />
+              <input type="email" name="email" placeholder="you@example.com" required />
             </label>
             <label>
               Company name
@@ -279,7 +283,7 @@
             </label>
             <label>
               Message
-              <textarea name="message" rows="4" placeholder="Tell us about your project or challenge"></textarea>
+              <textarea name="message" rows="4" placeholder="Tell us about your project or challenge" required></textarea>
             </label>
             <button type="submit" class="btn btn-primary form-btn">Send Inquiry</button>
           </form>

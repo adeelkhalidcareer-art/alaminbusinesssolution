@@ -6,19 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    form.addEventListener('submit', async (event) => {
       const button = form.querySelector('button');
       const originalText = button.textContent;
 
-      button.textContent = 'Inquiry Sent';
+      button.textContent = 'Sending...';
       button.disabled = true;
 
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.disabled = false;
-        form.reset();
-      }, 2000);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          button.textContent = 'Inquiry Sent';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        button.textContent = 'Try Again';
+        console.error(error);
+      } finally {
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2500);
+      }
     });
   }
 });
