@@ -178,6 +178,25 @@ img {
   margin-top: 28px;
 }
 
+.hero-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.mini-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 33, 63, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
 .hero-trust {
   display: flex;
   flex-wrap: wrap;
@@ -452,6 +471,44 @@ blockquote {
   grid-template-columns: 1fr 0.95fr;
   gap: 42px;
   align-items: center;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 22px rgba(17, 33, 63, 0.04);
+  color: var(--text);
+}
+
+.info-card span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  font-size: 1.2rem;
+}
+
+.info-card strong,
+.info-card small {
+  display: block;
+}
+
+.info-card small {
+  color: var(--muted);
+  margin-top: 4px;
 }
 
 .contact-list {
